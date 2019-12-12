@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e310980d-3192-460c-9a2b-69140629fe9c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>blockchain.py</StartupFile>
+    <StartupFile>node.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,25 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="block.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="blockchain.py" />
+    <Compile Include="node.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="transaction.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\hash_util.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\printable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="savefiles\" />
@@ -39,6 +57,9 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X86</Architecture>
     </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ui\node.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
