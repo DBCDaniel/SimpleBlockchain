@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e310980d-3192-460c-9a2b-69140629fe9c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SimpleBlockchain.py</StartupFile>
+    <StartupFile>blockchain.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="SimpleBlockchain.py" />
+    <Compile Include="blockchain.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="savefiles\" />
