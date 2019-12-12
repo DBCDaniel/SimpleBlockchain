@@ -11,6 +11,10 @@
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
           crossorigin="anonymous">
     <style>
+        .break {
+          word-break: break-all;
+        }
+
         .load-ring {
             display: inline;
             position: absolute;
@@ -77,10 +81,10 @@
             </div>
             <!--Response Labels-->
             <div class="bg-white p-3 border-left border-right">
-                <div v-if="error" class="alert alert-danger text-break" role="alert">
+                <div v-if="error" class="alert alert-danger break" role="alert">
                     {{ error }}
                 </div>
-                <div v-if="success" class="alert alert-success text-break" role="alert">
+                <div v-if="success" class="alert alert-success break" role="alert">
                     {{ success }}
                 </div>
             </div>
@@ -150,7 +154,7 @@
                             .then(function (response) {
                                 viewModel.error = null;
                                 viewModel.funds = response.data.funds;
-                                viewModel.success = "Created Wallet! Public Key: " + response.data.public_key + " Private Key: " + response.data.private_key;
+                                viewModel.success = "Created Wallet Public Key: [" + response.data.public_key + "] Private Key: [" + response.data.private_key + "]";
                                 viewModel.wallet = {
                                     public_key: response.data.public_key,
                                     private_key: response.data.private_key
