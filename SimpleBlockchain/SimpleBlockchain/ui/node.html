@@ -6,11 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blockchain Management Desk</title>
-    <link rel="stylesheet" 
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
           crossorigin="anonymous">
+    <style>
+        .load-ring {
+            display: inline;
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            margin-left: 16px;
+        }
 
+            .load-ring div {
+                box-sizing: border-box;
+                display: block;
+                position: absolute;
+                width: 41px;
+                height: 41px;
+                border: 6px solid #fa923f;
+                border-radius: 50%;
+                animation: load-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                border-color: #fa923f transparent transparent transparent;
+            }
+
+                .load-ring div:nth-child(1){
+                    animation-delay: -0.45s;
+                }
+                .load-ring div:nth-child(2){
+                    animation-delay: -0.3s;
+                }
+                .load-ring div:nth-child(3){
+                    animation-delay: -0.15s;
+                }
+
+    @keyframes load-ring{
+        0%{
+            transform: rotate(0deg);
+        }
+
+        0%{
+            transform: rotate(360deg);
+        }
+    }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -36,20 +76,41 @@
                 </div>
             </div>
             <!--Response Labels-->
-            <div class="bg-white p-3">
-                <div class="alert alert-danger" role="alert">
+            <div class="bg-white p-3 border-left border-right">
+                <div class="alert alert-danger text-break" role="alert">
                     {{ error }}
                 </div>
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-success text-break" role="alert">
                     {{ success }}
                 </div>
             </div>
-
-
+            <!--Wallet -->
+            <div class="bg-white border-left border-right border-bottom rounded-bottom">
+                <div class="col mb-3">
+                    <div>
+                        <h3 class="">Wallet</h3>
+                        <hr />
+                        <div class="">
+                            <button class="btn btn-primary mr-2 p-2">Create New Wallet</button>
+                            <button class="btn btn-primary p-2">Load Wallet</button>
+                            <div class="load-ring">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <h3 class="lead pt-3">Funds: 0</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
             <!--Footer-->
-            <div class="row py-3 bg-dark">
+            <div class="row py-3 bg-dark mt-5">
                 <div class="col">
-                    <p class="lead text-center text-light">Copyright &copy; 2019 Daniel Paulse. All rights reserved</p>
+                    <p class="lead text-center text-light">Copyright &copy; 2019 Daniel Paulse. <br /> All rights reserved</p>
                 </div>
             </div>
         </div>
