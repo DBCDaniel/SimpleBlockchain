@@ -1,3 +1,5 @@
+from block import Block
+
 class Blockchain:
     """ The Blockchain class manages the chain of blocks as well as open
     transactions and the node on which it's running.
@@ -8,7 +10,7 @@ class Blockchain:
     """
     def __init__(self):
         #starting block for the chain
-        GENISIS_BLOCK = {}
+        GENISIS_BLOCK = Block(0, "", [], 100, 0)
         #Initialize base blockchain list
         self.chain = [GENISIS_BLOCK]
         #Initalize base list of unhandled transactions
