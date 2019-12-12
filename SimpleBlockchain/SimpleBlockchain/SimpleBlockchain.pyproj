@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>SimpleBlockchain</Name>
     <RootNamespace>SimpleBlockchain</RootNamespace>
+    <InterpreterId>MSBuild|pycoin|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,6 +28,17 @@
     <Folder Include="savefiles\" />
     <Folder Include="utility\" />
     <Folder Include="ui\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="pycoin\">
+      <Id>pycoin</Id>
+      <Version>3.8</Version>
+      <Description>pycoin (Python 3.8 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
