@@ -5,9 +5,15 @@ from blockchain import Blockchain
 app = Flask(__name__)
 CORS(app)
 
+#WEB INTERFACE START
 @app.route("/", methods=["GET"])
 def get_node_ui():
     return send_from_directory("ui", "node.html")
+
+@app.route("/network", methods=["GET"])
+def get_network_ui():
+    return send_from_directory("ui", "network.html")
+#WEB INTERFACE END
 
 if __name__ == "__main__":
     blockchain = Blockchain()
