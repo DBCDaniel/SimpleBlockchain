@@ -43,3 +43,18 @@ class Wallet:
             except(IOError, IndexError):
                 print("Wallet Saving Failed...")
                 return False
+
+    def load_keys(self):
+        """ Loads the keys from the file (savefiles/wallet.dat) into memory."""
+        filePath = "savefiles/wallet[{0}].dat".format(self.node_identifier)
+        try:
+            with open(filePath, mode="r") as reader:
+                keys = reader.readlines()
+                public_key = keys[0][:-1]
+                private_key = keys[1]
+                self.public_key = public_key
+                self.private_key = private_key
+            return True
+        except (IOError, IndexError):
+            print('Wallet Loading Failed...')
+            return False

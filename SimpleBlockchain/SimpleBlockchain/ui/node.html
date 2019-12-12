@@ -175,7 +175,7 @@
                             .then(function (response) {
                                 viewModel.error = null;
                                 viewModel.funds = response.data.funds;
-                                viewModel.success = "Loaded Wallet! Public Key: " + response.data.public_key + " Private Key: " + response.data.private_key;
+                                viewModel.success = "Created Wallet Public Key: [" + response.data.public_key + "] Private Key: [" + response.data.private_key + "]";
                                 viewModel.wallet = {
                                     public_key: response.data.public_key,
                                     private_key: response.data.private_key

@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+SimpleBlockchain/.vs/SimpleBlockchain/v16/TestStore/0/000-0000.testlog
+SimpleBlockchain/SimpleBlockchain/savefiles/wallet\[5000\].dat
